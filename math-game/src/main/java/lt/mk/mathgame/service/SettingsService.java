@@ -5,14 +5,20 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-
+import java.util.Collections;
+import java.util.List;
+import lt.mk.mathgame.model.Operation;
+import lt.mk.mathgame.model.OperationSetting;
 import lt.mk.mathgame.model.PlayResult;
 import lt.mk.mathgame.model.PlaySettings;
 
 public class SettingsService {
 
     private static final String DELIMITER = ";";
-    private static final String DEFAULT_SETTINGS = "10;10;20;1;1;0;0;";
+    private static final String DEFAULT_SETTINGS = "10;10;20;1\n"
+            + "10;10;20;1\n"
+            + "10;10;50;0\n"
+            + "10;10;60;0\n";
 
     public SettingsService() {
         saveIfNeededDefaults();
@@ -30,26 +36,32 @@ public class SettingsService {
 
     private PlaySettings loadFromFileSettings() throws IOException {
 
-        String loadFromFIle = readSettings();
-        if (loadFromFIle != null && loadFromFIle.trim().length() > 0) {
-            String[] data = loadFromFIle.split(DELIMITER);
-            if (data.length >= 7) {
-                PlaySettings playSettings = new PlaySettings();
-                playSettings.setMaxFirst(Integer.parseInt(data[0].trim()));
-                playSettings.setMaxSecond(Integer.parseInt(data[1].trim()));
-                playSettings.setMaxTotal(Integer.parseInt(data[2].trim()));
-                playSettings.setUserPlus(Integer.parseInt(data[3].trim()) == 1);
-                playSettings.setUserMinus(Integer.parseInt(data[4].trim()) == 1);
-                playSettings.setUserMulti(Integer.parseInt(data[5].trim()) == 1);
-                playSettings.setUserDiv(Integer.parseInt(data[6].trim()) == 1);
-                if (data.length >= 8) {
-                    playSettings.setImagesPath(data[7]);
+        List<String> loadFromFile = readSettings();
+        if (loadFromFile != null && !loadFromFile.isEmpty()) {
+            PlaySettings playSettings = new PlaySettings();
+            playSettings.setDefaults();
+            for (int i = 0; i < Operation.values().length; i++) {
+                if (loadFromFile.size() > i) {
+                    String line = loadFromFile.get(i);
+                    if (line != null && !line.trim().isEmpty()) {
+                        String[] data = line.trim().split(DELIMITER);
+                        if (data.length >= 4) {
+                            playSettings.getValues().put(Operation.values()[i], new OperationSetting(
+                                    Integer.parseInt(data[0].trim()),
+                                    Integer.parseInt(data[1].trim()),
+                                    Integer.parseInt(data[2].trim()),
+                                    Integer.parseInt(data[3].trim()) == 1
+                            ));
+                        }
+                    }
                 }
-                return playSettings;
             }
+            if (loadFromFile.size() >= 5) {
+                playSettings.setImagesPath(loadFromFile.get(4));
+            }
+            return playSettings;
         }
         return getDefaultSettings();
-
     }
 
     public PlayResult loadValues() {
@@ -72,12 +84,12 @@ public class SettingsService {
         return r;
     }
 
-    private String readSettings() throws IOException {
+    private List<String> readSettings() throws IOException {
         File file = new File(getUserSettingsPath());
         if (file.isFile()) {
-            return new String(Files.readAllBytes(file.toPath()));
+            return Files.readAllLines(file.toPath());
         }
-        return null;
+        return Collections.emptyList();
     }
 
     private String readValues() throws IOException {
@@ -102,11 +114,7 @@ public class SettingsService {
 
     private PlaySettings getDefaultSettings() {
         PlaySettings playSettings = new PlaySettings();
-        playSettings.setMaxFirst(15);
-        playSettings.setMaxSecond(15);
-        playSettings.setMaxTotal(20);
-        playSettings.setUserPlus(true);
-        playSettings.setUserMinus(true);
+        playSettings.setDefaults();
         return playSettings;
     }
 
@@ -131,7 +139,7 @@ public class SettingsService {
         try {
             checkGameDirectoryExist();
             Path path = Paths.get(getUserSettingsPath());
-            if (!Files.isReadable(path)) {
+            if (!Files.isReadable(path) || readSettings().size() < 4) {
                 Files.write(path, DEFAULT_SETTINGS.getBytes());
             }
         } catch (Exception e) {

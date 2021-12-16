@@ -7,7 +7,6 @@ import static lt.mk.mathgame.model.Operation.PLUS;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import lt.mk.mathgame.model.Operation;
 import lt.mk.mathgame.model.PlaySettings;
 import lt.mk.mathgame.model.PlayValues;
@@ -72,36 +71,45 @@ public class MathService {
     }
 
 
-    private int nextFirst() {
-        return RandomUtils.next(playSettings.getMaxFirst()) + 1;
+    private int nextFirst(Operation op) {
+        return RandomUtils.next(playSettings.getValues().get(op).getMaxFirst()) + 1;
     }
 
-    private int nextSecond(int maxTotal) {
-        return RandomUtils.next(Math.min(playSettings.getMaxSecond(), maxTotal)) + 1;
+    private int nextSecond(Operation op, int maxTotal) {
+        return RandomUtils.next(Math.min(playSettings.getValues().get(op).getMaxSecond(), maxTotal)) + 1;
     }
 
     private PlayValues nextPlus() {
-        int firstNumber = nextFirst();
-        int secondNumber = nextSecond(playSettings.getMaxTotal() - firstNumber);
+        int firstNumber = nextFirst(PLUS);
+        int secondNumber = nextSecond(PLUS,playSettings.getValues().get(PLUS).getMaxTotal() - firstNumber);
         return new PlayValues(PLUS, firstNumber, secondNumber, firstNumber + secondNumber);
 
     }
 
     private PlayValues nextMinus() {
-        int firstNumber = nextFirst();
-        int secondNumber = nextSecond(Math.min(playSettings.getMaxTotal() - firstNumber, firstNumber));
+        int firstNumber = nextFirst(MINUS);
+        int secondNumber = nextSecond(MINUS, Math.min(playSettings.getValues().get(MINUS).getMaxTotal() - firstNumber, firstNumber));
         return new PlayValues(MINUS, firstNumber, secondNumber, firstNumber - secondNumber);
     }
 
     private PlayValues nextMulti() {
-        int firstNumber = nextFirst();
-        int secondNumber = nextSecond(playSettings.getMaxSecond());
+        int firstNumber = nextFirst(MULTI);
+        if (firstNumber > playSettings.getValues().get(MULTI).getMaxTotal()){
+            return new PlayValues(MULTI, firstNumber, 1, firstNumber);
+        }
+
+        if (firstNumber == 0){
+            int secondNumber = nextSecond(MULTI,  playSettings.getValues().get(MULTI).getMaxTotal());
+            return new PlayValues(MULTI, firstNumber, secondNumber, 0);
+        }
+
+        int secondNumber = nextSecond(MULTI,  playSettings.getValues().get(MULTI).getMaxTotal() / firstNumber);
         return new PlayValues(MULTI, firstNumber, secondNumber, firstNumber * secondNumber);
     }
 
     private PlayValues nextDiv() {
-        int firstNumber = nextFirst();
-        int secondNumber = nextSecond(playSettings.getMaxSecond());
+        int firstNumber = nextFirst(DIV);
+        int secondNumber = nextSecond(DIV, playSettings.getValues().get(DIV).getMaxSecond());
         return new PlayValues(DIV, firstNumber * secondNumber, firstNumber, secondNumber);
     }
 }

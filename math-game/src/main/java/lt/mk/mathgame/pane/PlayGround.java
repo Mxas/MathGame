@@ -5,18 +5,21 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Tooltip;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Priority;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import lt.mk.mathgame.model.PlayValues;
+import lt.mk.mathgame.pane.text.LimitedTextField;
 
 public class PlayGround extends GridPane {
+
     private TextField firstNumber;
     private Label operation;
     private TextField secondNumber;
-    private TextField answer;
+    private LimitedTextField answer;
     private int realAnswer;
 
     public PlayGround() {
@@ -82,10 +85,13 @@ public class PlayGround extends GridPane {
 
 
         // Add Text Field
-        answer = new TextField();
+        answer = new LimitedTextField();
         answer.setPrefHeight(5);
         answer.setFont(Font.font("Arial", FontWeight.BOLD, 24));
         answer.setEditable(true);
+        answer.setRestrict("-?[0-9]");
+        answer.setMaxLength(5);
+        answer.setTooltip(new Tooltip("Tik skaičiai"));
 
         add(answer, 4, 1);
 

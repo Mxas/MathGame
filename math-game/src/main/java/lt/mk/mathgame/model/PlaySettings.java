@@ -1,72 +1,45 @@
 package lt.mk.mathgame.model;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class PlaySettings {
 
-    private int maxTotal;
-    private int maxFirst;
-    private int maxSecond;
+    private Map<Operation, OperationSetting> values = new HashMap<>();
 
-    private boolean userPlus;
-    private boolean userMinus;
-    private boolean userMulti;
-    private boolean userDiv;
     private String imagesPath;
 
-    public int getMaxTotal() {
-        return maxTotal;
+
+    public void setDefaults() {
+        values.put(Operation.PLUS, new OperationSetting(10, 10, 20, true));
+        values.put(Operation.MINUS, new OperationSetting(10, 10, 20, true));
+        values.put(Operation.MULTI, new OperationSetting(10, 10, 50, true));
+        values.put(Operation.DIV, new OperationSetting(10, 10, 50, true));
     }
 
-    public void setMaxTotal(int maxTotal) {
-        this.maxTotal = maxTotal;
-    }
-
-    public int getMaxFirst() {
-        return maxFirst;
-    }
-
-    public void setMaxFirst(int maxFirst) {
-        this.maxFirst = maxFirst;
-    }
-
-    public int getMaxSecond() {
-        return maxSecond;
-    }
-
-    public void setMaxSecond(int maxSecond) {
-        this.maxSecond = maxSecond;
+    public Map<Operation, OperationSetting> getValues() {
+        return values;
     }
 
     public boolean isUserPlus() {
-        return userPlus;
+        return values.get(Operation.PLUS).isEnabled();
     }
 
-    public void setUserPlus(boolean userPlus) {
-        this.userPlus = userPlus;
-    }
 
     public boolean isUserMinus() {
-        return userMinus;
+        return values.get(Operation.MINUS).isEnabled();
     }
 
-    public void setUserMinus(boolean userMinus) {
-        this.userMinus = userMinus;
-    }
 
     public boolean isUserMulti() {
-        return userMulti;
+        return values.get(Operation.MULTI).isEnabled();
     }
 
-    public void setUserMulti(boolean userMulti) {
-        this.userMulti = userMulti;
-    }
 
     public boolean isUserDiv() {
-        return userDiv;
+        return values.get(Operation.DIV).isEnabled();
     }
 
-    public void setUserDiv(boolean userDiv) {
-        this.userDiv = userDiv;
-    }
 
     public String getImagesPath() {
         return imagesPath;
