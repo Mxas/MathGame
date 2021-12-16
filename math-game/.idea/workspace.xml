@@ -4,55 +4,12 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="206e452f-c030-45eb-943b-f7d4a27d08b8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_12_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_base_linux_12_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_12_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_controls_linux_12_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_12_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_openjfx_javafx_graphics_linux_12_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lt/mk/mathgame/model/OperationSetting.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lt/mk/mathgame/pane/text/LimitedTextField.java" afterDir="false" />
+    <list default="true" id="206e452f-c030-45eb-943b-f7d4a27d08b8" name="Default Changelist" comment="more settings for multi/div">
       <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/MathGame.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__junit_junit_4_12.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_5_7_0_M1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_7_0_M1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_7_0_M1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_params_5_7_0_M1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_7_0_M1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_7_0_M1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_openjfx_javafx_base_12_0_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_openjfx_javafx_base_linux_12_0_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_openjfx_javafx_controls_12_0_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_openjfx_javafx_controls_linux_12_0_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_openjfx_javafx_graphics_12_0_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_openjfx_javafx_graphics_linux_12_0_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_0.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_5_7_0_M1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_5_8_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_7_0_M1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_8_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_7_0_M1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_8_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_params_5_7_0_M1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_params_5_8_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_7_0_M1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_8_2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_7_0_M1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_8_2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/math-game.iml" beforeDir="false" afterPath="$PROJECT_DIR$/math-game.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mk/mathgame/model/PlaySettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mk/mathgame/model/PlaySettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mk/mathgame/pane/MainForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mk/mathgame/pane/MainForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mk/mathgame/pane/PlayGround.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mk/mathgame/pane/PlayGround.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mk/mathgame/service/MathService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mk/mathgame/service/MathService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mk/mathgame/service/SettingsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mk/mathgame/service/SettingsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lt/mk/mathgame/utils/RandomUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lt/mk/mathgame/utils/RandomUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -219,8 +176,16 @@
       <workItem from="1589396759966" duration="23457000" />
       <workItem from="1589463173447" duration="2243000" />
       <workItem from="1589465563125" duration="7789000" />
-      <workItem from="1639585400896" duration="5718000" />
+      <workItem from="1639585400896" duration="6331000" />
     </task>
+    <task id="LOCAL-00001" summary="more settings for multi/div">
+      <created>1639642174184</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1639642174184</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -236,6 +201,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="more settings for multi/div" />
+    <option name="LAST_COMMIT_MESSAGE" value="more settings for multi/div" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
